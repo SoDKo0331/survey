@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Let's Talk | Сэтгэлзүйн богино судалгаа</title>
+    <title>Let's Talk | Хэн байсныг олоорой</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,7 @@
 
         body {
             min-height: 100vh;
+
             font-family: "Inter", sans-serif;
 
             background:
@@ -63,7 +64,9 @@
             max-width: 650px;
         }
 
-        /* LOGO */
+        /* =========================
+           BRAND
+        ========================== */
 
         .brand {
             text-align: center;
@@ -110,7 +113,9 @@
             margin-top: 4px;
         }
 
-        /* CARD */
+        /* =========================
+           CARD
+        ========================== */
 
         .card {
             background: var(--card);
@@ -126,13 +131,12 @@
             overflow: hidden;
         }
 
-        /* HEADER */
+        /* =========================
+           MAIN
+        ========================== */
 
-        .header {
-            padding: 35px;
-
-            border-bottom:
-                1px solid var(--border);
+        .content {
+            padding: 38px 35px 35px;
         }
 
         .tag {
@@ -148,77 +152,75 @@
 
             border-radius: 20px;
 
-            margin-bottom: 13px;
+            margin-bottom: 14px;
         }
 
-        .header h2 {
-            font-size: 25px;
+        .content h2 {
+            font-size: 27px;
             line-height: 1.3;
 
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .header p {
+        .description {
+            color: var(--muted);
+
             font-size: 13px;
-            color: var(--muted);
-
             line-height: 1.7;
+
+            margin-bottom: 28px;
         }
 
-        /* PROGRESS */
+        /* =========================
+           QUESTION
+        ========================== */
 
-        .progress-area {
-            padding: 18px 35px;
-
-            background: #fcfbff;
-
-            border-bottom:
-                1px solid var(--border);
-        }
-
-        .progress-info {
-            display: flex;
-            justify-content: space-between;
-
-            color: var(--muted);
-
-            font-size: 11px;
-
-            margin-bottom: 8px;
-        }
-
-        .progress {
-            height: 6px;
-
-            background: #e8e5f0;
-
-            border-radius: 20px;
-
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            width: 20%;
-            height: 100%;
-
+        .question-box {
             background:
                 linear-gradient(
-                    90deg,
-                    var(--primary),
-                    var(--pink)
+                    135deg,
+                    #faf9ff,
+                    #fffafd
                 );
 
-            transition: width .4s ease;
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            padding: 22px;
+
+            margin-bottom: 20px;
         }
 
-        /* CONTENT */
-
-        .content {
-            padding: 35px;
+        .question-box .emoji {
+            font-size: 30px;
+            margin-bottom: 12px;
         }
 
-        .question-number {
-            color: var(--primary);
+        .question-box h3 {
+            font-size: 19px;
+            line-height: 1.45;
+        }
+
+        .question-box p {
+            color: var(--muted);
+
+            font-size: 12px;
+            line-height: 1.6;
+
+            margin-top: 8px;
+        }
+
+        /* =========================
+           INPUT
+        ========================== */
+
+        .input-area {
+            margin-top: 20px;
+        }
+
+        .input-label {
+            display: block;
 
             font-size: 12px;
             font-weight: 700;
@@ -226,62 +228,51 @@
             margin-bottom: 8px;
         }
 
-        .question {
-            font-size: 20px;
-            line-height: 1.45;
+        input[type="text"] {
+            width: 100%;
 
-            margin-bottom: 23px;
-        }
+            border: 1px solid var(--border);
 
-        .options {
-            display: grid;
-            gap: 10px;
-        }
-
-        .option {
-            display: flex;
-            align-items: center;
-
-            gap: 12px;
-
-            padding: 15px;
-
-            border:
-                1px solid var(--border);
+            background: #fff;
 
             border-radius: 12px;
 
-            cursor: pointer;
+            padding: 15px 16px;
 
-            font-size: 13px;
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            color: var(--text);
 
             transition: .2s;
         }
 
-        .option:hover {
+        input[type="text"]:focus {
             border-color: var(--primary);
-            background: #faf9ff;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(104, 87, 217, .08);
         }
 
-        .option input {
-            accent-color: var(--primary);
+        input::placeholder {
+            color: #aaa6b8;
         }
 
-        .option:has(input:checked) {
-            background: var(--primary-light);
-            border-color: var(--primary);
-        }
-
-        /* BUTTON */
+        /* =========================
+           BUTTON
+        ========================== */
 
         .actions {
-            margin-top: 28px;
-
-            display: flex;
-            justify-content: flex-end;
+            margin-top: 20px;
         }
 
         button {
+            width: 100%;
+
             border: none;
 
             background:
@@ -293,13 +284,14 @@
 
             color: white;
 
-            padding: 13px 23px;
+            padding: 15px 23px;
 
-            border-radius: 10px;
+            border-radius: 12px;
 
             font-family: inherit;
 
             font-size: 13px;
+
             font-weight: 700;
 
             cursor: pointer;
@@ -315,19 +307,26 @@
             transform: translateY(-2px);
         }
 
+        button:active {
+            transform: translateY(0);
+        }
+
         button:disabled {
             opacity: .6;
             cursor: not-allowed;
             transform: none;
         }
 
+        /* =========================
+           ERROR
+        ========================== */
+
         .error {
             display: none;
 
             background: #fff1f4;
 
-            border:
-                1px solid #f5cbd7;
+            border: 1px solid #f5cbd7;
 
             color: #b72f53;
 
@@ -337,17 +336,19 @@
 
             font-size: 12px;
 
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
 
-        /* LOADING */
+        /* =========================
+           LOADING
+        ========================== */
 
         .loading {
             display: none;
 
             text-align: center;
 
-            padding: 55px 30px;
+            padding: 65px 30px;
         }
 
         .spinner {
@@ -376,11 +377,13 @@
 
         .loading h3 {
             font-size: 18px;
+
             margin-bottom: 8px;
         }
 
         .loading p {
             color: var(--muted);
+
             font-size: 12px;
         }
 
@@ -388,12 +391,15 @@
             color: var(--primary);
 
             font-size: 22px;
+
             font-weight: 800;
 
             margin-top: 15px;
         }
 
-        /* PRANK REVEAL */
+        /* =========================
+           PRANK
+        ========================== */
 
         .reveal {
             display: none;
@@ -403,17 +409,57 @@
             padding: 35px 25px 45px;
         }
 
+        .reveal .reveal-emoji {
+            font-size: 42px;
+
+            margin-bottom: 12px;
+        }
+
+        .reveal h2 {
+            font-size: 31px;
+
+            line-height: 1.2;
+
+            margin-bottom: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--pink)
+                );
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+        }
+
+        .main-text {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
+        }
+
+        /* =========================
+           PRANK IMAGE
+        ========================== */
+
         .prank-image {
             display: block;
 
             width: 100%;
+
             max-width: 500px;
 
             max-height: 500px;
 
             object-fit: contain;
 
-            margin: 0 auto 25px;
+            margin: 25px auto 25px;
 
             border-radius: 18px;
 
@@ -452,30 +498,9 @@
             }
         }
 
-        .reveal h2 {
-            font-size: 30px;
-
-            margin-bottom: 12px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--primary),
-                    var(--pink)
-                );
-
-            -webkit-background-clip: text;
-
-            color: transparent;
-        }
-
-        .main-text {
-            color: var(--muted);
-
-            font-size: 14px;
-
-            line-height: 1.7;
-        }
+        /* =========================
+           PRANK BOX
+        ========================== */
 
         .prank-box {
             margin: 25px auto;
@@ -531,27 +556,34 @@
             font-size: 10px;
         }
 
+        /* =========================
+           MOBILE
+        ========================== */
+
         @media(max-width:600px) {
 
             body {
                 padding: 15px;
             }
 
-            .header,
             .content {
-                padding: 25px 20px;
+                padding: 28px 20px;
             }
 
-            .progress-area {
-                padding: 16px 20px;
+            .content h2 {
+                font-size: 23px;
             }
 
-            .header h2 {
-                font-size: 21px;
-            }
-
-            .question {
+            .question-box h3 {
                 font-size: 18px;
+            }
+
+            .reveal {
+                padding: 30px 18px 40px;
+            }
+
+            .reveal h2 {
+                font-size: 27px;
             }
 
             .prank-image {
@@ -566,7 +598,9 @@
 
 <div class="container">
 
-    <!-- LET'S TALK BRAND -->
+    <!-- =========================
+         BRAND
+    ========================== -->
 
     <div class="brand">
 
@@ -586,91 +620,73 @@
     <div class="card">
 
         <!-- =========================
-             SURVEY
+             INPUT PAGE
         ========================== -->
 
-        <div id="survey">
+        <div id="mainPage">
 
-            <div class="header">
+            <div class="content">
 
                 <span class="tag">
-                    СЭТГЭЛЗҮЙН БОГИНО СУДАЛГАА
+                    LET'S TALK • MINI GAME
                 </span>
 
                 <h2>
-                    Таны өдөр тутмын зан төлөвийн хэв маяг
+                    Нүд боож байгаад
+                    ярисан хүнээ олоорой 👀
                 </h2>
 
-                <p>
-                    Дараах асуултуудад өөрт хамгийн ойр
-                    санагдсан хариултыг сонгоно уу.
-                    Судалгаа ойролцоогоор 2 минут үргэлжилнэ.
+                <p class="description">
+                    Доорх хэсэгт саяхан ярилцсан гэж бодож
+                    байгаа хүнийхээ нэрийг бичээд үзээрэй.
+                    🤫 Яг зөв эсэхийг одоохондоо хэлэхгүй...
                 </p>
 
-            </div>
 
+                <div class="question-box">
 
-            <div class="progress-area">
-
-                <div class="progress-info">
-
-                    <span id="questionCount">
-                        1 / 5
-                    </span>
-
-                    <span id="percent">
-                        20%
-                    </span>
-
-                </div>
-
-                <div class="progress">
-
-                    <div
-                        class="progress-bar"
-                        id="progress">
+                    <div class="emoji">
+                        🙈
                     </div>
 
+                    <h3>
+                        Та нүд боолттой байсан бол
+                        хэнтэй ярьснаа зөвхөн дуугаар
+                        нь таньж чадах уу?
+                    </h3>
+
+                    <p>
+                        Нэрийг нь таагаад доорх хэсэгт бичнэ үү.
+                    </p>
+
                 </div>
 
-            </div>
-
-
-            <div class="content">
 
                 <div
                     class="error"
                     id="error">
 
-                    ⚠️ Үргэлжлүүлэхийн өмнө
-                    нэг хариулт сонгоно уу.
+                    ⚠️ Эхлээд хэнийг гэж бодож байгаагаа бичнэ үү.
 
                 </div>
 
 
-                <div id="questionArea">
+                <div class="input-area">
 
-                    <div
-                        class="question-number"
-                        id="questionNumber">
+                    <label
+                        class="input-label"
+                        for="nameInput">
 
-                        АСУУЛТ 01
+                        Таны таамаг
 
-                    </div>
+                    </label>
 
-                    <div
-                        class="question"
-                        id="questionText">
-
-                        Та шинэ хүмүүстэй уулзах үедээ
-                        ихэвчлэн...
-
-                    </div>
-
-                    <div
-                        class="options"
-                        id="options">
-                    </div>
+                    <input
+                        type="text"
+                        id="nameInput"
+                        placeholder="Жишээ: Бат, Болор, Номин..."
+                        autocomplete="off"
+                    >
 
                 </div>
 
@@ -678,10 +694,10 @@
                 <div class="actions">
 
                     <button
-                        id="nextButton"
-                        onclick="nextQuestion()">
+                        id="findButton"
+                        onclick="startPrank()">
 
-                        Үргэлжлүүлэх →
+                        🔍 Олох →
 
                     </button>
 
@@ -703,11 +719,11 @@
             <div class="spinner"></div>
 
             <h3>
-                Таны хариултыг боловсруулж байна...
+                Дуу хоолойг шинжилж байна...
             </h3>
 
             <p id="loadingText">
-                Судалгааны мэдээллийг нэгтгэж байна.
+                Таны оруулсан нэрийг шалгаж байна.
             </p>
 
             <div
@@ -729,53 +745,55 @@
             class="reveal"
             id="reveal">
 
-            <!--
-                ЭНЭ ЗУРГИЙГ СУДАЛГАА ДУУСААД
-                АВТОМАТААР ГАРГАНА.
-
-                Файлаа:
-                images/prank.png
-
-                гэж хадгална.
-            -->
-
-            <img
-                src="images/prank.png"
-                alt="Let's Talk prank"
-                class="prank-image"
-                id="prankImage"
-            >
-
+            <div class="reveal-emoji">
+                😂
+            </div>
 
             <h2>
-                ТА PRANK-Д ОРЛОО! 😂
+                PRANK-Д ОРЛОО!
             </h2>
-
 
             <p class="main-text">
 
-                За за... тайван 😂
+                Та үнэхээр хэнтэй ярьснаа
+                олно гэж бодсон уу? 😂
 
                 <br>
 
-                Та сая жинхэнэ сэтгэлзүйн тест
-                бөглөсөн гэж бодсон байх.
+                За за... тайван.
+                Таны хариултыг шалгаагүй ээ.
 
             </p>
+
+
+            <!--
+                PRANK IMAGE
+
+                Энд зураг шууд гарна.
+                Доорх URL-г хүсвэл өөрийн
+                зурагны URL-ээр солино.
+            -->
+
+            <img
+                class="prank-image"
+                id="prankImage"
+                src="https://i1.sndcdn.com/artworks-000363065745-i3l8y2-t500x500.jpg"
+                alt="Funny prank reaction"
+            >
 
 
             <div class="prank-box">
 
                 <strong>
-                    🧠 Үнэндээ таныг оношлоогүй ээ.
+                    🧠 Үнэндээ хэнийг ч таньсангүй.
                 </strong>
 
                 <p>
-                    Энэ бол Let's Talk клубын шинэ
-                    гишүүдэд зориулсан хөгжилтэй prank.
-                    Дээрх асуултууд нь оношилгооны тест
-                    биш бөгөөд таны талаар бодит
-                    сэтгэлзүйн дүгнэлт гаргахгүй.
+                    Энэ бол Let's Talk клубын
+                    хөгжилтэй prank байсан юм.
+                    Таны оруулсан нэрээр ямар нэгэн
+                    бодит шинжилгээ эсвэл танилт
+                    хийгдээгүй болно. 😄
                 </p>
 
             </div>
@@ -788,7 +806,8 @@
                 <br><br>
 
                 Сэтгэл судлалын талаар хамтдаа ярилцаж,
-                сонирхож, суралцаж, шинэ зүйлс туршицгаая.
+                сонирхож, суралцаж, шинэ зүйлс
+                туршицгаая.
 
                 <br><br>
 
@@ -815,257 +834,57 @@
 <script>
 
     /* =========================
-       АСУУЛТУУД
+       PRANK ЭХЛҮҮЛЭХ
     ========================== */
 
-    const questions = [
+    function startPrank() {
 
-        {
-            text:
-                "Та шинэ хүмүүстэй уулзах үедээ ихэвчлэн...",
+        const input =
+            document.getElementById("nameInput");
 
-            options: [
-                "Яриаг өөрөө эхлүүлдэг",
-                "Нөгөө хүн эхлэхийг хүлээдэг",
-                "Нөхцөл байдлаас шалтгаална",
-                "Эхлээд ажигладаг"
-            ]
-        },
+        const name =
+            input.value.trim();
 
-        {
-            text:
-                "Чөлөөт цагаа өнгөрөөхдөө аль нь танд илүү таалагддаг вэ?",
+        const error =
+            document.getElementById("error");
 
-            options: [
-                "Найзуудтайгаа уулзах",
-                "Ганцаараа тайван байх",
-                "Кино, сериал үзэх",
-                "Шинэ зүйл турших"
-            ]
-        },
+        const button =
+            document.getElementById("findButton");
 
-        {
-            text:
-                "Төлөвлөөгүй зүйл гэнэт тохиолдоход та...",
 
-            options: [
-                "Шууд зохицуулдаг",
-                "Жаахан сандардаг",
-                "Инээд болгож өнгөрөөдөг",
-                "Эхлээд бодож байгаад шийддэг"
-            ]
-        },
+        /*
+            Нэр оруулаагүй бол
+            үргэлжлүүлэхгүй.
+        */
 
-        {
-            text:
-                "Найз тань асуудлаа яривал та ихэвчлэн...",
+        if (!name) {
 
-            options: [
-                "Зөвлөгөө өгдөг",
-                "Зүгээр л сонсдог",
-                "Тайвшруулахыг хичээдэг",
-                "Хамтдаа шийдэл хайдаг"
-            ]
-        },
+            error.style.display = "block";
 
-        {
-            text:
-                "Өөрийгөө хамгийн ойр тодорхойлох үг аль нь вэ?",
-
-            options: [
-                "Сониуч",
-                "Тайван",
-                "Хөгжилтэй",
-                "Бодлоготой"
-            ]
-        }
-
-    ];
-
-
-    let currentQuestion = 0;
-
-    const answers = [];
-
-
-    const questionText =
-        document.getElementById("questionText");
-
-    const options =
-        document.getElementById("options");
-
-    const questionNumber =
-        document.getElementById("questionNumber");
-
-    const questionCount =
-        document.getElementById("questionCount");
-
-    const percent =
-        document.getElementById("percent");
-
-    const progress =
-        document.getElementById("progress");
-
-    const error =
-        document.getElementById("error");
-
-    const nextButton =
-        document.getElementById("nextButton");
-
-
-    /* =========================
-       АСУУЛТ АЧААЛАХ
-    ========================== */
-
-    function loadQuestion() {
-
-        const q =
-            questions[currentQuestion];
-
-
-        questionNumber.innerText =
-            "АСУУЛТ " +
-            String(currentQuestion + 1)
-                .padStart(2, "0");
-
-
-        questionText.innerText =
-            q.text;
-
-
-        questionCount.innerText =
-            (currentQuestion + 1)
-            + " / "
-            + questions.length;
-
-
-        const p =
-            Math.round(
-                (
-                    (currentQuestion + 1)
-                    / questions.length
-                ) * 100
-            );
-
-
-        percent.innerText =
-            p + "%";
-
-
-        progress.style.width =
-            p + "%";
-
-
-        options.innerHTML = "";
-
-
-        q.options.forEach(
-            (option, index) => {
-
-                const label =
-                    document.createElement("label");
-
-                label.className =
-                    "option";
-
-
-                label.innerHTML = `
-
-                    <input
-                        type="radio"
-                        name="answer"
-                        value="${index}">
-
-                    <span>
-                        ${option}
-                    </span>
-
-                `;
-
-
-                options.appendChild(label);
-
-            }
-        );
-
-
-        if (
-            currentQuestion ===
-            questions.length - 1
-        ) {
-
-            nextButton.innerText =
-                "Судалгааг дуусгах ✓";
-
-        } else {
-
-            nextButton.innerText =
-                "Үргэлжлүүлэх →";
-
-        }
-
-    }
-
-
-    /* =========================
-       ДАРААГИЙН АСУУЛТ
-    ========================== */
-
-    function nextQuestion() {
-
-        const selected =
-            document.querySelector(
-                'input[name="answer"]:checked'
-            );
-
-
-        if (!selected) {
-
-            error.style.display =
-                "block";
+            input.focus();
 
             return;
 
         }
 
 
-        error.style.display =
-            "none";
+        error.style.display = "none";
+
+        button.disabled = true;
 
 
-        answers.push(
-            selected.value
-        );
-
-
-        if (
-            currentQuestion <
-            questions.length - 1
-        ) {
-
-            currentQuestion++;
-
-            loadQuestion();
-
-        } else {
-
-            finishSurvey();
-
-        }
-
-    }
-
-
-    /* =========================
-       СУДАЛГАА ДУУСАХ
-    ========================== */
-
-    function finishSurvey() {
+        /*
+            INPUT PAGE-ИЙГ НУУНА
+        */
 
         document.getElementById(
-            "survey"
+            "mainPage"
         ).style.display = "none";
 
+
+        /*
+            LOADING ХАРУУЛНА
+        */
 
         document.getElementById(
             "loading"
@@ -1075,13 +894,28 @@
         let value = 0;
 
 
+        const loadingPercent =
+            document.getElementById(
+                "loadingPercent"
+            );
+
+        const loadingText =
+            document.getElementById(
+                "loadingText"
+            );
+
+
+        /*
+            Fake AI / voice analysis
+        */
+
         const interval =
             setInterval(() => {
 
                 value +=
                     Math.floor(
-                        Math.random() * 8
-                    ) + 3;
+                        Math.random() * 9
+                    ) + 4;
 
 
                 if (value >= 100) {
@@ -1090,70 +924,67 @@
 
                     clearInterval(interval);
 
-
-                    document.getElementById(
-                        "loadingPercent"
-                    ).innerText =
+                    loadingPercent.innerText =
                         "100%";
+
+                    loadingText.innerText =
+                        "Хариултыг эцэслэж байна...";
 
 
                     setTimeout(
                         revealPrank,
-                        700
+                        900
                     );
 
                 }
 
 
-                document.getElementById(
-                    "loadingPercent"
-                ).innerText =
+                loadingPercent.innerText =
                     value + "%";
 
 
-                if (value < 35) {
+                if (value < 30) {
 
-                    document.getElementById(
-                        "loadingText"
-                    ).innerText =
-                        "Хариултуудыг шалгаж байна...";
+                    loadingText.innerText =
+                        "Дуу хоолойн мэдээллийг уншиж байна...";
 
                 }
 
-                else if (value < 65) {
+                else if (value < 55) {
 
-                    document.getElementById(
-                        "loadingText"
-                    ).innerText =
-                        "Хариултын хэв маягийг нэгтгэж байна...";
+                    loadingText.innerText =
+                        "Таны оруулсан нэрийг шалгаж байна...";
 
                 }
 
-                else if (value < 90) {
+                else if (value < 80) {
 
-                    document.getElementById(
-                        "loadingText"
-                    ).innerText =
-                        "Судалгааны үр дүнг боловсруулах гэж байна...";
+                    loadingText.innerText =
+                        "Ярилцсан хүнийг хайж байна...";
+
+                }
+
+                else if (value < 95) {
+
+                    loadingText.innerText =
+                        "Тохирох хүнийг тодорхойлж байна...";
 
                 }
 
                 else {
 
-                    document.getElementById(
-                        "loadingText"
-                    ).innerText =
-                        "Эцсийн үр дүнг бэлдэж байна...";
+                    loadingText.innerText =
+                        "Эцсийн хариуг бэлдэж байна...";
 
                 }
 
-            }, 180);
+            }, 170);
 
     }
 
 
     /* =========================
-       PRANK ЗУРАГ ГАРГАХ
+       PRANK ГАРГАХ
     ========================== */
 
     function revealPrank() {
@@ -1169,34 +1000,28 @@
 
 
         /*
-            ЗУРГИЙГ ДАХИН АЧААЛЛАЖ,
-            СУДАЛГАА ДУУСААД Л ХАРУУЛНА.
+            Зураг шууд харагдана.
         */
 
-        const prankImage =
+        const image =
             document.getElementById(
                 "prankImage"
             );
 
 
-        prankImage.style.display =
-            "block";
+        image.style.display = "block";
 
 
         /*
             Зураг ачаалагдахгүй бол
-            жижиг тайлбар харуулна.
+            эвдэрсэн зураг icon үлдээхгүй.
         */
 
-        prankImage.onerror =
+        image.onerror =
             function() {
 
                 this.style.display =
                     "none";
-
-                console.warn(
-                    "images/prank.png зураг олдсонгүй."
-                );
 
             };
 
@@ -1210,10 +1035,23 @@
 
 
     /* =========================
-       ЭХЛҮҮЛЭХ
+       ENTER ДАРАХАД АЖИЛЛАНА
     ========================== */
 
-    loadQuestion();
+    document
+        .getElementById("nameInput")
+        .addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    startPrank();
+
+                }
+
+            }
+        );
 
 </script>
 
