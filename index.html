@@ -1,80 +1,129 @@
 <!DOCTYPE html>
+
 <html lang="mn">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Let's Talk | Хэн байсныг олоорой</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
+
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+
+        rel="stylesheet"
+
+    >
 
     <style>
+
         :root {
+
             --primary: #6857d9;
+
             --primary-dark: #5142bd;
+
             --primary-light: #f0edff;
+
             --pink: #ef6fae;
+
             --bg: #f7f6fb;
+
             --text: #24213a;
+
             --muted: #77748a;
+
             --border: #e3e0ee;
+
             --card: #ffffff;
+
         }
 
         * {
+
             box-sizing: border-box;
+
             margin: 0;
+
             padding: 0;
+
         }
 
         body {
+
             min-height: 100vh;
 
             font-family: "Inter", sans-serif;
 
             background:
+
                 radial-gradient(
+
                     circle at 10% 10%,
+
                     #eeeaff 0,
+
                     transparent 30%
+
                 ),
+
                 radial-gradient(
+
                     circle at 90% 90%,
+
                     #ffeaf4 0,
+
                     transparent 30%
+
                 ),
+
                 var(--bg);
 
             color: var(--text);
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             padding: 25px;
+
         }
 
         .container {
+
             width: 100%;
+
             max-width: 650px;
+
         }
 
         /* =========================
+
            BRAND
+
         ========================== */
 
         .brand {
+
             text-align: center;
+
             margin-bottom: 20px;
+
         }
 
         .logo {
+
             width: 58px;
+
             height: 58px;
 
             margin: 0 auto 10px;
@@ -82,42 +131,63 @@
             border-radius: 18px;
 
             background:
+
                 linear-gradient(
+
                     135deg,
+
                     var(--primary),
+
                     var(--pink)
+
                 );
 
             color: white;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             font-weight: 800;
+
             font-size: 20px;
 
             box-shadow:
+
                 0 10px 30px
+
                 rgba(104, 87, 217, .25);
+
         }
 
         .brand h1 {
+
             font-size: 18px;
+
             font-weight: 800;
+
         }
 
         .brand p {
+
             font-size: 12px;
+
             color: var(--muted);
+
             margin-top: 4px;
+
         }
 
         /* =========================
+
            CARD
+
         ========================== */
 
         .card {
+
             background: var(--card);
 
             border: 1px solid var(--border);
@@ -125,27 +195,37 @@
             border-radius: 22px;
 
             box-shadow:
+
                 0 20px 60px
+
                 rgba(40, 35, 70, .09);
 
             overflow: hidden;
+
         }
 
         /* =========================
+
            MAIN
+
         ========================== */
 
         .content {
+
             padding: 38px 35px 35px;
+
         }
 
         .tag {
+
             display: inline-block;
 
             background: var(--primary-light);
+
             color: var(--primary);
 
             font-size: 11px;
+
             font-weight: 700;
 
             padding: 6px 10px;
@@ -153,34 +233,49 @@
             border-radius: 20px;
 
             margin-bottom: 14px;
+
         }
 
         .content h2 {
+
             font-size: 27px;
+
             line-height: 1.3;
 
             margin-bottom: 12px;
+
         }
 
         .description {
+
             color: var(--muted);
 
             font-size: 13px;
+
             line-height: 1.7;
 
             margin-bottom: 28px;
+
         }
 
         /* =========================
+
            QUESTION
+
         ========================== */
 
         .question-box {
+
             background:
+
                 linear-gradient(
+
                     135deg,
+
                     #faf9ff,
+
                     #fffafd
+
                 );
 
             border: 1px solid var(--border);
@@ -190,45 +285,63 @@
             padding: 22px;
 
             margin-bottom: 20px;
+
         }
 
         .question-box .emoji {
+
             font-size: 30px;
+
             margin-bottom: 12px;
+
         }
 
         .question-box h3 {
+
             font-size: 19px;
+
             line-height: 1.45;
+
         }
 
         .question-box p {
+
             color: var(--muted);
 
             font-size: 12px;
+
             line-height: 1.6;
 
             margin-top: 8px;
+
         }
 
         /* =========================
+
            INPUT
+
         ========================== */
 
         .input-area {
+
             margin-top: 20px;
+
         }
 
         .input-label {
+
             display: block;
 
             font-size: 12px;
+
             font-weight: 700;
 
             margin-bottom: 8px;
+
         }
 
         input[type="text"] {
+
             width: 100%;
 
             border: 1px solid var(--border);
@@ -248,38 +361,55 @@
             color: var(--text);
 
             transition: .2s;
+
         }
 
         input[type="text"]:focus {
+
             border-color: var(--primary);
 
             box-shadow:
+
                 0 0 0 4px
+
                 rgba(104, 87, 217, .08);
+
         }
 
         input::placeholder {
+
             color: #aaa6b8;
+
         }
 
         /* =========================
+
            BUTTON
+
         ========================== */
 
         .actions {
+
             margin-top: 20px;
+
         }
 
         button {
+
             width: 100%;
 
             border: none;
 
             background:
+
                 linear-gradient(
+
                     135deg,
+
                     var(--primary),
+
                     #806de8
+
                 );
 
             color: white;
@@ -297,31 +427,45 @@
             cursor: pointer;
 
             box-shadow:
+
                 0 8px 20px
+
                 rgba(104, 87, 217, .2);
 
             transition: .2s;
+
         }
 
         button:hover {
+
             transform: translateY(-2px);
+
         }
 
         button:active {
+
             transform: translateY(0);
+
         }
 
         button:disabled {
+
             opacity: .6;
+
             cursor: not-allowed;
+
             transform: none;
+
         }
 
         /* =========================
+
            ERROR
+
         ========================== */
 
         .error {
+
             display: none;
 
             background: #fff1f4;
@@ -337,57 +481,77 @@
             font-size: 12px;
 
             margin-bottom: 15px;
+
         }
 
         /* =========================
+
            LOADING
+
         ========================== */
 
         .loading {
+
             display: none;
 
             text-align: center;
 
             padding: 65px 30px;
+
         }
 
         .spinner {
+
             width: 55px;
+
             height: 55px;
 
             border:
+
                 4px solid #e9e5f8;
 
             border-top-color:
+
                 var(--primary);
 
             border-radius: 50%;
 
             animation:
+
                 spin .8s linear infinite;
 
             margin: 0 auto 22px;
+
         }
 
         @keyframes spin {
+
             to {
+
                 transform: rotate(360deg);
+
             }
+
         }
 
         .loading h3 {
+
             font-size: 18px;
 
             margin-bottom: 8px;
+
         }
 
         .loading p {
+
             color: var(--muted);
 
             font-size: 12px;
+
         }
 
         .loading-percent {
+
             color: var(--primary);
 
             font-size: 22px;
@@ -395,27 +559,35 @@
             font-weight: 800;
 
             margin-top: 15px;
+
         }
 
         /* =========================
-           PRANK
+
+           REVEAL
+
         ========================== */
 
         .reveal {
+
             display: none;
 
             text-align: center;
 
             padding: 35px 25px 45px;
+
         }
 
         .reveal .reveal-emoji {
+
             font-size: 42px;
 
             margin-bottom: 12px;
+
         }
 
         .reveal h2 {
+
             font-size: 31px;
 
             line-height: 1.2;
@@ -423,18 +595,27 @@
             margin-bottom: 12px;
 
             background:
+
                 linear-gradient(
+
                     90deg,
+
                     var(--primary),
+
                     var(--pink)
+
                 );
 
             -webkit-background-clip: text;
 
+            background-clip: text;
+
             color: transparent;
+
         }
 
         .main-text {
+
             color: var(--muted);
 
             font-size: 14px;
@@ -442,156 +623,237 @@
             line-height: 1.7;
 
             margin-bottom: 22px;
+
         }
 
         /* =========================
-           PRANK 
+
+           PRANK IMAGE
+
         ========================== */
 
-        .prank- {
+        .prank-image {
+
             display: block;
 
             width: 100%;
 
-            max-width: 500px;
+            max-width: 560px;
 
-            max-height: 500px;
+            height: auto;
 
             object-fit: contain;
 
-            margin: 25px auto 25px;
+            margin: 25px auto;
 
             border-radius: 18px;
 
             box-shadow:
+
                 0 18px 45px
+
                 rgba(40, 35, 70, .18);
 
             animation:
+
                 prank .8s ease;
+
+            /* Prevents image from overflowing */
+
+            max-height: none;
+
         }
 
         @keyframes prank {
 
             0% {
+
                 opacity: 0;
 
                 transform:
+
                     scale(.45)
+
                     rotate(-7deg);
+
             }
 
             60% {
+
                 opacity: 1;
 
                 transform:
+
                     scale(1.07)
+
                     rotate(2deg);
+
             }
 
             100% {
+
                 opacity: 1;
 
                 transform:
+
                     scale(1)
+
                     rotate(0);
+
             }
+
         }
 
         /* =========================
+
            PRANK BOX
+
         ========================== */
 
         .prank-box {
+
             margin: 25px auto;
 
             max-width: 460px;
 
             background:
+
                 linear-gradient(
+
                     135deg,
+
                     #f0edff,
+
                     #fff0f6
+
                 );
 
             border:
+
                 1px solid #e5defc;
 
             border-radius: 15px;
 
             padding: 20px;
+
         }
 
         .prank-box strong {
+
             display: block;
 
             font-size: 15px;
 
             margin-bottom: 7px;
+
         }
 
         .prank-box p {
+
             color: var(--muted);
 
             font-size: 12px;
 
             line-height: 1.6;
+
         }
 
         .club-message {
+
             font-size: 13px;
 
             line-height: 1.7;
+
         }
 
         .club-message strong {
+
             color: var(--primary);
+
         }
 
         .small-note {
+
             margin-top: 20px;
 
             color: #aaa6b8;
 
             font-size: 10px;
+
         }
 
         /* =========================
+
            MOBILE
+
         ========================== */
 
-        @media(max-width:600px) {
+        @media (max-width: 600px) {
 
             body {
+
                 padding: 15px;
+
+            }
+
+            .container {
+
+                width: 100%;
+
             }
 
             .content {
+
                 padding: 28px 20px;
+
             }
 
             .content h2 {
+
                 font-size: 23px;
+
             }
 
             .question-box h3 {
+
                 font-size: 18px;
+
             }
 
             .reveal {
+
                 padding: 30px 18px 40px;
+
             }
 
             .reveal h2 {
+
                 font-size: 27px;
+
             }
 
-            .prank- {
-                max-height: 380px;
+            /* Horizontal image fits screen */
+
+            .prank-image {
+
+                width: 100%;
+
+                max-width: 100%;
+
+                height: auto;
+
+                max-height: none;
+
+                border-radius: 14px;
+
+                margin: 20px auto;
+
             }
+
         }
 
     </style>
+
 </head>
 
 <body>
@@ -599,28 +861,35 @@
 <div class="container">
 
     <!-- =========================
+
          BRAND
+
     ========================== -->
 
     <div class="brand">
 
         <div class="logo">
+
             LT
+
         </div>
 
         <h1>Let's Talk</h1>
 
         <p>
+
             Сэтгэл судлалын клуб
+
         </p>
 
     </div>
 
-
     <div class="card">
 
         <!-- =========================
+
              INPUT PAGE
+
         ========================== -->
 
         <div id="mainPage">
@@ -628,65 +897,85 @@
             <div class="content">
 
                 <span class="tag">
+
                     LET'S TALK • MINI GAME
+
                 </span>
 
                 <h2>
+
                     Нүд боож байгаад
+
                     ярисан хүнээ олоорой 👀
+
                 </h2>
 
                 <p class="description">
-                    Доорх хэсэгт саяхан авч ярьсан тоогоо
-                 бичээд хараарай.
-                </p>
 
+                    Доорх хэсэгт саяхан авч ярьсан тоогоо
+
+                    бичээд хараарай.
+
+                </p>
 
                 <div class="question-box">
 
                     <div class="emoji">
+
                         🙈
+
                     </div>
 
-
                     <p>
-                        тоогоо доорх хэсэгт бичнэ үү.
+
+                        Тоогоо доорх хэсэгт бичнэ үү.
+
                     </p>
 
                 </div>
 
-
                 <div
+
                     class="error"
+
                     id="error">
 
-                    авсан тоогоо оруул
+                    Авсан тоогоо оруул
 
                 </div>
-
 
                 <div class="input-area">
 
                     <label
+
                         class="input-label"
+
                         for="nameInput">
+
+                        Таны таамаг
 
                     </label>
 
                     <input
+
                         type="text"
+
                         id="nameInput"
+
                         placeholder="Жишээ: Бат, Болор, Номин..."
+
                         autocomplete="off"
+
                     >
 
                 </div>
 
-
                 <div class="actions">
 
                     <button
+
                         id="findButton"
+
                         onclick="startPrank()">
 
                         🔍 Олох →
@@ -699,27 +988,36 @@
 
         </div>
 
-
         <!-- =========================
+
              LOADING
+
         ========================== -->
 
         <div
+
             class="loading"
+
             id="loading">
 
             <div class="spinner"></div>
 
             <h3>
+
                 Дуу хоолойг шинжилж байна...
+
             </h3>
 
             <p id="loadingText">
+
                 Таны оруулсан тоог шалгаж байна.
+
             </p>
 
             <div
+
                 class="loading-percent"
+
                 id="loadingPercent">
 
                 0%
@@ -728,77 +1026,89 @@
 
         </div>
 
-
         <!-- =========================
+
              PRANK RESULT
+
         ========================== -->
 
         <div
+
             class="reveal"
+
             id="reveal">
 
             <div class="reveal-emoji">
+
                 😂
+
             </div>
 
             <h2>
+
                 PRANK-Д ОРЛОО!
+
             </h2>
 
             <p class="main-text">
 
                 Та үнэхээр хэнтэй ярьснаа
+
                 олно гэж бодсон уу? 😂
 
                 <br>
 
             </p>
 
+            <!-- =========================
 
-            <!--
-                PRANK 
+                 PRANK IMAGE
 
-                Энд зураг шууд гарна.
-                Доорх URL-г хүсвэл өөрийн
-                зурагны URL-ээр солино.
-            -->
+            ========================== -->
 
             <img
-                class="prank-image"
-                id="prankImage"
-                src="./prank.png"
-                alt="Funny prank reaction"
-            >
 
+                class="prank-image"
+
+                id="prankImage"
+
+                src="./prank.png"
+
+                alt="Funny prank reaction"
+
+            >
 
             <div class="prank-box">
 
                 <strong>
-                    🧠 hhahhaha
+
+                    🧠 Hahahaha
 
                 </strong>
 
             </div>
 
-
             <p class="club-message">
 
-                💜 <strong>Let's Talk</strong>-д тавтай морил!
+                <strong>Let's Talk</strong>-д тавтай морил!
 
                 <br><br>
 
                 Сэтгэл судлалын талаар хамтдаа ярилцаж,
+
                 сонирхож, суралцаж, шинэ зүйлс
+
                 туршицгаая.
 
                 <br><br>
 
                 <strong>
+
                     Welcome to Let's Talk! 🎉
+
                 </strong>
 
             </p>
-
 
             <div class="small-note">
 
@@ -812,32 +1122,37 @@
 
 </div>
 
-
 <script>
 
     /* =========================
-       PRANK ЭХЛҮҮЛЭХ
+
+       PRANK START
+
     ========================== */
 
     function startPrank() {
 
         const input =
+
             document.getElementById("nameInput");
 
         const name =
+
             input.value.trim();
 
         const error =
+
             document.getElementById("error");
 
         const button =
+
             document.getElementById("findButton");
 
+        /* =========================
 
-        /*
-            Нэр оруулаагүй бол
-            үргэлжлүүлэхгүй.
-        */
+           VALIDATION
+
+        ========================== */
 
         if (!name) {
 
@@ -849,56 +1164,69 @@
 
         }
 
-
         error.style.display = "none";
 
         button.disabled = true;
 
+        /* =========================
 
-        /*
-            INPUT PAGE-ИЙГ НУУНА
-        */
+           HIDE INPUT PAGE
+
+        ========================== */
 
         document.getElementById(
+
             "mainPage"
+
         ).style.display = "none";
 
+        /* =========================
 
-        /*
-            LOADING ХАРУУЛНА
-        */
+           SHOW LOADING
+
+        ========================== */
 
         document.getElementById(
-            "loading"
-        ).style.display = "block";
 
+            "loading"
+
+        ).style.display = "block";
 
         let value = 0;
 
-
         const loadingPercent =
+
             document.getElementById(
+
                 "loadingPercent"
+
             );
 
         const loadingText =
+
             document.getElementById(
+
                 "loadingText"
+
             );
 
+        /* =========================
 
-        /*
-            Fake AI / voice analysis
-        */
+           FAKE AI ANALYSIS
+
+        ========================== */
 
         const interval =
+
             setInterval(() => {
 
                 value +=
-                    Math.floor(
-                        Math.random() * 9
-                    ) + 4;
 
+                    Math.floor(
+
+                        Math.random() * 9
+
+                    ) + 4;
 
                 if (value >= 100) {
 
@@ -907,27 +1235,31 @@
                     clearInterval(interval);
 
                     loadingPercent.innerText =
+
                         "100%";
 
                     loadingText.innerText =
+
                         "Хариултыг эцэслэж байна...";
 
-
                     setTimeout(
+
                         revealPrank,
+
                         900
+
                     );
 
                 }
 
-
                 loadingPercent.innerText =
-                    value + "%";
 
+                    value + "%";
 
                 if (value < 30) {
 
                     loadingText.innerText =
+
                         "Дуу хоолойн мэдээллийг уншиж байна...";
 
                 }
@@ -935,6 +1267,7 @@
                 else if (value < 55) {
 
                     loadingText.innerText =
+
                         "Таны оруулсан тоог шалгаж байна...";
 
                 }
@@ -942,6 +1275,7 @@
                 else if (value < 80) {
 
                     loadingText.innerText =
+
                         "Ярилцсан хүнийг хайж байна...";
 
                 }
@@ -949,6 +1283,7 @@
                 else if (value < 95) {
 
                     loadingText.innerText =
+
                         "Тохирох хүнийг тодорхойлж байна...";
 
                 }
@@ -956,6 +1291,7 @@
                 else {
 
                     loadingText.innerText =
+
                         "Эцсийн хариуг бэлдэж байна...";
 
                 }
@@ -964,66 +1300,90 @@
 
     }
 
-
     /* =========================
-       PRANK ГАРГАХ
+
+       SHOW PRANK
+
     ========================== */
 
     function revealPrank() {
 
         document.getElementById(
+
             "loading"
+
         ).style.display = "none";
 
-
         document.getElementById(
+
             "reveal"
+
         ).style.display = "block";
 
+        /* =========================
 
-        /*
-            Зураг шууд харагдана.
-        */
+           IMAGE
+
+        ========================== */
 
         const image =
-            document.getElementById(
-                "prankImage"
-            );
 
+            document.getElementById(
+
+                "prankImage"
+
+            );
 
         image.style.display = "block";
 
-
         /*
-            Зураг ачаалагдахгүй бол
-            эвдэрсэн зураг icon үлдээхгүй.
+
+            If image doesn't exist,
+
+            hide broken image.
+
         */
 
         image.onerror =
+
             function() {
 
                 this.style.display =
+
                     "none";
 
             };
 
+        /*
+
+            Scroll to top
+
+        */
 
         window.scrollTo({
+
             top: 0,
+
             behavior: "smooth"
+
         });
 
     }
 
-
     /* =========================
-       ENTER ДАРАХАД АЖИЛЛАНА
+
+       ENTER KEY
+
     ========================== */
 
     document
+
         .getElementById("nameInput")
+
         .addEventListener(
+
             "keydown",
+
             function(event) {
 
                 if (event.key === "Enter") {
@@ -1033,9 +1393,11 @@
                 }
 
             }
+
         );
 
 </script>
 
 </body>
+
 </html>
