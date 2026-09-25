@@ -1,545 +1,1284 @@
 <!DOCTYPE html>
 <html lang="mn">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сүнсний Хань Тодорхойлогч ✨</title>
 
-    <!-- Open Graph / Facebook Link Preview Metadata -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Сүнсний Хань Тодорхойлогч ✨">
-    <meta property="og:description"
-        content="Төрсөн он сар, нас, хүйсийн мэдээллээ оруулж одон орны болон энергийн зохицлоор сүнсний ханиа тодорхойлно уу.">
-    <meta property="og:image" content="images/preview.png">
+    <title>Нийгмийн судалгааны төв | Судалгааны асуулга</title>
 
-    <!-- Twitter Link Preview Metadata -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Сүнсний Хань Тодорхойлогч ✨">
-    <meta property="twitter:description"
-        content="Төрсөн он сар, нас, хүйсийн мэдээллээ оруулж одон орны болон энергийн зохицлоор сүнсний ханиа тодорхойлно уу.">
-    <meta property="twitter:image" content="images/preview.png">
+    <meta name="description"
+        content="Нийгмийн судалгааны төвийн цахим судалгааны асуулга. Таны өгсөн хариулт судалгааны зорилгоор ашиглагдана.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
     <style>
         :root {
-            --bg-color: #FAF6F0;
-            /* Warm organic cream */
-            --card-bg: #FFFFFF;
-            --accent-color: #C49A6C;
-            /* Antique soft gold */
-            --accent-hover: #B28859;
-            --text-main: #2E2C2A;
-            /* Deep charcoal */
-            --text-muted: #7A7571;
-            /* Soft warm grey */
-            --card-shadow: 0 15px 45px rgba(46, 44, 42, 0.05);
+            --primary: #2457a6;
+            --primary-dark: #19427e;
+            --primary-light: #eaf1fb;
+
+            --bg: #f4f6f9;
+            --card: #ffffff;
+
+            --text: #172033;
+            --muted: #667085;
+
+            --border: #d9dee8;
+
+            --success: #16803c;
+            --success-bg: #eaf7ef;
+
+            --danger: #c62828;
+
+            --shadow: 0 8px 30px rgba(20, 35, 60, 0.08);
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
+        }
+
+        /* HEADER */
+
+        .top-header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1050px;
+            margin: auto;
+            padding: 18px 20px;
+
             display: flex;
             align-items: center;
-            justify-content: center;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Subtle glowing warm backgrounds */
-        .ambient-glow {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(196, 154, 108, 0.06) 0%, transparent 70%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .glow-1 {
-            top: 15%;
-            left: 10%;
-        }
-
-        .glow-2 {
-            bottom: 15%;
-            right: 10%;
-        }
-
-        /* Main Container */
-        .container {
-            width: 90%;
-            max-width: 420px;
-            z-index: 10;
-        }
-
-        /* Minimalist Card */
-        .card {
-            background: var(--card-bg);
-            border-radius: 28px;
-            padding: 3rem 2.2rem;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
             justify-content: space-between;
-            border: 1px solid rgba(196, 154, 108, 0.1);
         }
 
-        .card-content {
-            flex-grow: 1;
+        .brand {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            gap: 12px;
         }
 
-        /* Typography styling */
-        .header {
-            margin-bottom: 2rem;
-            transition: opacity 0.3s ease;
-        }
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: white;
 
-        .header h1 {
-            font-family: 'Nunito', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.2px;
-        }
-
-        .header p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Minimalist Input Form */
-        .form-container {
             display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .form-group {
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
-            border: 1px solid rgba(196, 154, 108, 0.25);
-            background: #FFFFFF;
-            color: var(--text-main);
-            font-family: 'Nunito', sans-serif;
-            font-size: 0.95rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(196, 154, 108, 0.1);
-        }
-
-        /* Spinner for Simulation */
-        .loader-container {
-            display: none;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 2rem 0;
+
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 18px;
         }
 
-        .loader-circle {
-            width: 60px;
-            height: 60px;
-            border: 2px solid rgba(196, 154, 108, 0.1);
-            border-top-color: var(--accent-color);
-            border-radius: 50%;
-            animation: spin 1s infinite linear;
-            margin-bottom: 1.5rem;
+        .brand-text strong {
+            display: block;
+            font-size: 15px;
         }
 
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
+        .brand-text span {
+            display: block;
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
         }
 
-        /* Status text during loading */
-        .status-text {
-            font-size: 0.9rem;
-            font-style: italic;
-            color: var(--text-main);
-            min-height: 1.5rem;
-            transition: all 0.3s ease;
-            margin-bottom: 0.5rem;
+        .secure {
+            color: var(--success);
+            font-size: 12px;
+            font-weight: 600;
         }
 
-        .status-percent {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
+        /* MAIN */
+
+        .page {
+            max-width: 850px;
+            margin: 45px auto;
+            padding: 0 18px;
         }
 
-        /* Progress Bar */
-        .progress-container {
-            width: 150px;
-            height: 4px;
-            background: rgba(196, 154, 108, 0.15);
-            border-radius: 2px;
+        .survey-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
             overflow: hidden;
+        }
+
+        /* TITLE */
+
+        .survey-header {
+            padding: 35px 38px 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .survey-label {
+            display: inline-block;
+
+            background: var(--primary-light);
+            color: var(--primary);
+
+            padding: 6px 10px;
+            border-radius: 5px;
+
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .survey-header h1 {
+            font-size: 27px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .survey-header p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 680px;
+        }
+
+        /* PROGRESS */
+
+        .progress-area {
+            padding: 20px 38px;
+
+            border-bottom: 1px solid var(--border);
+            background: #fafbfd;
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 9px;
+
+            font-size: 12px;
+            color: var(--muted);
         }
 
         .progress-bar {
+            height: 6px;
+            background: #e5e8ee;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 20%;
             height: 100%;
-            width: 0%;
-            background: var(--accent-color);
-            transition: width 0.1s linear;
+            background: var(--primary);
+
+            transition: width 0.35s ease;
         }
 
-        .result-image {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* FORM */
+
+        .form {
+            padding: 35px 38px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .section-description {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .question {
+            margin-bottom: 27px;
+        }
+
+        .question-label {
+            display: block;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            margin-bottom: 9px;
+        }
+
+        .required {
+            color: var(--danger);
+            margin-left: 3px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 28px;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity 1.5s ease, visibility 1.5s ease;
-            z-index: 10;
-        }
 
-        .revealed .result-image {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
+            padding: 12px 13px;
 
-        .revealed .btn-wrapper {
-            display: none;
-        }
+            border: 1px solid var(--border);
+            border-radius: 7px;
 
-        /* Action Buttons */
-        .btn-wrapper {
-            width: 100%;
-            z-index: 20;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease;
-        }
+            background: white;
 
-        .btn {
-            background: var(--accent-color);
-            color: #fff;
-            border: none;
-            padding: 0.9rem 2.2rem;
-            font-size: 0.98rem;
-            font-weight: 500;
-            border-radius: 14px;
-            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+
+            color: var(--text);
+
             outline: none;
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-            width: 100%;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 12px rgba(196, 154, 108, 0.18);
+
+            transition: 0.2s;
         }
 
-        .btn:hover {
-            background: var(--accent-hover);
-            box-shadow: 0 6px 18px rgba(196, 154, 108, 0.28);
-            transform: translateY(-2px);
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--primary);
+
+            box-shadow:
+                0 0 0 3px rgba(36, 87, 166, 0.1);
         }
 
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
+        textarea {
+            min-height: 110px;
+            resize: vertical;
         }
 
-        /* Screen Shake Animation */
-        .shake-card {
-            animation: shake 0.6s cubic-bezier(.36, .07, .19, .97) both;
+        .help {
+            color: var(--muted);
+            font-size: 11px;
+            margin-top: 6px;
         }
 
-        @keyframes shake {
-            10%, 90% { transform: translate3d(-2px, 0, 0); }
-            20%, 80% { transform: translate3d(4px, 0, 0); }
-            30%, 50%, 70% { transform: translate3d(-8px, 0, 0); }
-            40%, 60% { transform: translate3d(8px, 0, 0); }
+        /* OPTIONS */
+
+        .options {
+            display: grid;
+            gap: 9px;
         }
 
-        /* Privacy Disclaimer */
-        .disclaimer {
-            margin-top: 1.2rem;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            opacity: 0.6;
-            letter-spacing: 0.2px;
-            transition: opacity 0.3s ease;
+        .option {
+            border: 1px solid var(--border);
+            border-radius: 7px;
+
+            padding: 12px;
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 13px;
+
+            transition: 0.2s;
         }
 
-        /* Form alert helper */
-        .error-message {
-            color: #d9534f;
-            font-size: 0.8rem;
-            margin-top: 0.3rem;
+        .option:hover {
+            background: #f8faff;
+            border-color: #aebed9;
+        }
+
+        .option input {
+            accent-color: var(--primary);
+        }
+
+        .option:has(input:checked) {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        /* SCALE */
+
+        .scale {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+
+        .scale label {
+            border: 1px solid var(--border);
+            border-radius: 7px;
+
+            padding: 11px 5px;
+
+            text-align: center;
+            cursor: pointer;
+
+            font-size: 12px;
+        }
+
+        .scale input {
             display: none;
-            text-align: left;
+        }
+
+        .scale label:has(input:checked) {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .scale-description {
+            display: flex;
+            justify-content: space-between;
+
+            color: var(--muted);
+            font-size: 11px;
+
+            margin-top: 6px;
+        }
+
+        /* ERROR */
+
+        .error {
+            display: none;
+
+            background: #fff1f1;
+            border: 1px solid #f1c4c4;
+
+            color: var(--danger);
+
+            padding: 11px 13px;
+            border-radius: 7px;
+
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER */
+
+        .form-footer {
+            border-top: 1px solid var(--border);
+
+            padding-top: 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .privacy {
+            font-size: 11px;
+            color: var(--muted);
+            max-width: 430px;
+            line-height: 1.5;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+
+            border: none;
+            border-radius: 7px;
+
+            padding: 12px 24px;
+
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* SUCCESS */
+
+        .success {
+            display: none;
+
+            padding: 55px 35px;
+
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 65px;
+            height: 65px;
+
+            background: var(--success-bg);
+            color: var(--success);
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 20px;
+
+            font-size: 28px;
+        }
+
+        .success h2 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .success p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .reference {
+            margin-top: 22px;
+
+            background: #f7f8fa;
+
+            border: 1px solid var(--border);
+
+            padding: 13px;
+
+            border-radius: 7px;
+
+            font-size: 12px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 650px) {
+
+            .page {
+                margin: 20px auto;
+            }
+
+            .survey-header,
+            .form {
+                padding: 25px 20px;
+            }
+
+            .progress-area {
+                padding: 17px 20px;
+            }
+
+            .survey-header h1 {
+                font-size: 22px;
+            }
+
+            .form-footer {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 18px;
+            }
+
+            .submit-btn {
+                width: 100%;
+            }
+
+            .secure {
+                display: none;
+            }
         }
     </style>
 </head>
 
-<body class="welcome">
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
+<body>
 
-    <div class="container">
-        <div class="card" id="prankCard">
-            <!-- Prank Image inside card -->
-            <img src="" alt="Soul mate" class="result-image" id="prankImage">
+<header class="top-header">
 
-            <div class="card-content" id="cardContent">
-                <!-- Screen Header -->
-                <div class="header" id="cardHeader">
-                    <h1>Soul mate Тодорхойлогч ✨</h1>
-                    <p>Таны хувийн мэдээлэл болон одон орны зохицлоор сүнсний ханийг тань тодорхойлох болно.</p>
-                </div>
+    <div class="header-inner">
 
-                <!-- Demographic Input Form -->
-                <div class="form-container" id="formContainer">
-                    <div class="form-group">
-                        <label for="userName">Таны нэр</label>
-                        <input type="text" class="form-input" id="userName" required placeholder="Нэрээ оруулна уу">
-                    </div>
+        <div class="brand">
 
-                    <div class="form-group">
-                        <label for="birthDate">Төрсөн он, сар, өдөр</label>
-                        <input type="date" class="form-input" id="birthDate" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="gender">Хүйс</label>
-                        <select class="form-input" id="gender" required>
-                            <option value="" disabled selected>Хүйсээ сонгоно уу</option>
-                            <option value="male">Эрэгтэй</option>
-                            <option value="female">Эмэгтэй</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mbti">MBTI төрөл</label>
-                        <select class="form-input" id="mbti" required>
-                            <option value="" disabled selected>MBTI сонгох (мэдэхгүй бол таах)</option>
-                            <option value="intj">INTJ - Архитектор</option>
-                            <option value="intp">INTP - Сэтгэгч</option>
-                            <option value="entj">ENTJ - Удирдагч</option>
-                            <option value="entp">ENTP - Мэтгэлцэгч</option>
-                            <option value="infj">INFJ - Өмгөөлөгч</option>
-                            <option value="infp">INFP - Зуучлагч</option>
-                            <option value="enfj">ENFJ - Гол дүр</option>
-                            <option value="enfp">ENFP - Тэмцэгч</option>
-                            <option value="istj">ISTJ - Логикч</option>
-                            <option value="isfj">ISFJ - Хамгаалагч</option>
-                            <option value="estj">ESTJ - Гүйцэтгэх захирал</option>
-                            <option value="esfj">ESFJ - Консул</option>
-                            <option value="istp">ISTP - Урлаач</option>
-                            <option value="isfp">ISFP - Адал явдал эрэгч</option>
-                            <option value="estp">ESTP - Бизнесмен</option>
-                            <option value="esfp">ESFP - Цэнгээгч</option>
-                        </select>
-                    </div>
-                    <div class="error-message" id="formError">⚠️ Бүх талбарыг зөв бөглөнө үү.</div>
-                </div>
-
-                <!-- Simulation Loading State -->
-                <div class="loader-container" id="loaderContainer">
-                    <div class="loader-circle"></div>
-                    <div class="status-text" id="statusText">Холбогдож байна...</div>
-                    <div class="status-percent" id="statusPercent">0%</div>
-                    <div class="progress-container">
-                        <div class="progress-bar" id="progressBar"></div>
-                    </div>
-                </div>
+            <div class="brand-logo">
+                СТ
             </div>
 
-            <!-- Button Wrapper -->
-            <div class="btn-wrapper" id="btnWrapper">
-                <button class="btn" id="actionBtn">Тодорхойлох 🔮</button>
+            <div class="brand-text">
+                <strong>Судалгааны төв</strong>
+                <span>Цахим судалгааны платформ</span>
             </div>
 
-            <!-- Small Privacy Notice -->
-            <p class="disclaimer" id="disclaimerText">Бид таны мэдээллийг хадгалахгүй бөгөөд зөвхөн төхөөрөмж дээр
-                боловсруулна.</p>
         </div>
+
+        <div class="secure">
+            🔒 Аюулгүй холболт
+        </div>
+
     </div>
 
-    <script>
-        const card = document.getElementById('prankCard');
-        const formContainer = document.getElementById('formContainer');
-        const loaderContainer = document.getElementById('loaderContainer');
-        const actionBtn = document.getElementById('actionBtn');
-        const statusText = document.getElementById('statusText');
-        const statusPercent = document.getElementById('statusPercent');
-        const progressBar = document.getElementById('progressBar');
-        const disclaimerText = document.getElementById('disclaimerText');
-        const prankImage = document.getElementById('prankImage');
-        const formError = document.getElementById('formError');
-        const btnWrapper = document.getElementById('btnWrapper');
+</header>
 
-        // Inputs
-        const userNameInput = document.getElementById('userName');
-        const birthDateInput = document.getElementById('birthDate');
-        const genderInput = document.getElementById('gender');
-        const mbtiInput = document.getElementById('mbti');
 
-        let appState = 'welcome'; 
+<main class="page">
 
-        const stages = [
-            { t: "Мэдээллийн сантай холбогдож байна...", p: 15 },
-            { t: "Одон орны матрицыг үүсгэж байна...", p: 28 },
-            { t: "Зан чанарын алгоритмыг ажиллуулж байна...", p: 42 },
-            { t: "Дэлхийн 8 тэрбум хүн дунд хайлт хийж байна...", p: 56 },
-            { t: "Тохирох кандидатуудыг шүүж байна...", p: 71 },
-            { t: "Гадаад төрхийн нийцлийг тооцоолж байна...", p: 83 },
-            { t: "Энергийн давтамжийг тааруулж байна...", p: 92 },
-            { t: "Эцсийн нэг хүнийг баталгаажуулж байна...", p: 99 }
-        ];
+    <div class="survey-card">
 
-        function vibrate(pattern) {
-            if (navigator.vibrate) {
-                navigator.vibrate(pattern);
-            }
+        <!-- HEADER -->
+
+        <div class="survey-header">
+
+            <div class="survey-label">
+                Судалгааны асуулга
+            </div>
+
+            <h1>
+                Монгол Улсын иргэдийн цахим хэрэглээний судалгаа
+            </h1>
+
+            <p>
+                Энэхүү судалгаагаар иргэдийн интернет болон цахим
+                үйлчилгээний хэрэглээ, зан төлөв, сэтгэл ханамжийн
+                талаарх мэдээллийг цуглуулна.
+            </p>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-area">
+
+            <div class="progress-top">
+
+                <span id="progressText">
+                    1-р хэсэг / 3
+                </span>
+
+                <span id="progressPercent">
+                    33%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form class="form" id="surveyForm">
+
+            <div id="errorBox" class="error">
+                ⚠️ Та шаардлагатай талбаруудыг бүрэн бөглөнө үү.
+            </div>
+
+
+            <!-- SECTION 1 -->
+
+            <section id="section1">
+
+                <div class="section-title">
+                    1. Ерөнхий мэдээлэл
+                </div>
+
+                <div class="section-description">
+                    Таны талаарх ерөнхий мэдээллийг бөглөнө үү.
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Насны ангилал
+                        <span class="required">*</span>
+                    </label>
+
+                    <select id="age" required>
+
+                        <option value="">
+                            Сонгоно уу
+                        </option>
+
+                        <option>
+                            15–18 нас
+                        </option>
+
+                        <option>
+                            19–24 нас
+                        </option>
+
+                        <option>
+                            25–34 нас
+                        </option>
+
+                        <option>
+                            35–44 нас
+                        </option>
+
+                        <option>
+                            45–54 нас
+                        </option>
+
+                        <option>
+                            55–64 нас
+                        </option>
+
+                        <option>
+                            65-аас дээш
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Таны хүйс
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="options">
+
+                        <label class="option">
+                            <input type="radio" name="gender" value="male">
+                            Эрэгтэй
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="gender" value="female">
+                            Эмэгтэй
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="gender" value="other">
+                            Бусад / хэлэхийг хүсэхгүй байна
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Боловсролын түвшин
+                        <span class="required">*</span>
+                    </label>
+
+                    <select id="education" required>
+
+                        <option value="">
+                            Сонгоно уу
+                        </option>
+
+                        <option>
+                            Бүрэн дунд
+                        </option>
+
+                        <option>
+                            Мэргэжлийн болон техникийн
+                        </option>
+
+                        <option>
+                            Бакалавр
+                        </option>
+
+                        <option>
+                            Магистр
+                        </option>
+
+                        <option>
+                            Доктор
+                        </option>
+
+                        <option>
+                            Бусад
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Таны одоогийн эрхэлж буй байдал
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="options">
+
+                        <label class="option">
+                            <input type="radio" name="employment" value="student">
+                            Сурагч / оюутан
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="employment" value="employee">
+                            Байгууллагад ажилладаг
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="employment" value="business">
+                            Хувиараа бизнес эрхэлдэг
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="employment" value="other">
+                            Бусад
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="submit-btn"
+                    onclick="nextSection()">
+
+                    Үргэлжлүүлэх →
+
+                </button>
+
+            </section>
+
+
+            <!-- SECTION 2 -->
+
+            <section id="section2" style="display:none;">
+
+                <div class="section-title">
+                    2. Цахим хэрэглээ
+                </div>
+
+                <div class="section-description">
+                    Таны өдөр тутмын интернет болон цахим үйлчилгээний
+                    хэрэглээний талаар асууж байна.
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Өдөрт дунджаар интернетэд хэдэн цаг зарцуулдаг вэ?
+                        <span class="required">*</span>
+                    </label>
+
+                    <select id="internetTime">
+
+                        <option value="">
+                            Сонгоно уу
+                        </option>
+
+                        <option>
+                            1 цагаас бага
+                        </option>
+
+                        <option>
+                            1–3 цаг
+                        </option>
+
+                        <option>
+                            3–5 цаг
+                        </option>
+
+                        <option>
+                            5–8 цаг
+                        </option>
+
+                        <option>
+                            8 цагаас дээш
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Та интернетэд ихэвчлэн ямар төхөөрөмж ашигладаг вэ?
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="options">
+
+                        <label class="option">
+                            <input type="radio" name="device">
+                            Ухаалаг утас
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="device">
+                            Зөөврийн компьютер
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="device">
+                            Суурин компьютер
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="device">
+                            Таблет
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Та цахим төрийн үйлчилгээг хэр тогтмол ашигладаг вэ?
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="options">
+
+                        <label class="option">
+                            <input type="radio" name="egov">
+                            Маш тогтмол
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="egov">
+                            Тогтмол
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="egov">
+                            Заримдаа
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="egov">
+                            Огт ашигладаггүй
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Цахим үйлчилгээний хүртээмжид хэр сэтгэл хангалуун байдаг вэ?
+                    </label>
+
+                    <div class="scale">
+
+                        <label>
+                            <input type="radio" name="rating" value="1">
+                            1
+                        </label>
+
+                        <label>
+                            <input type="radio" name="rating" value="2">
+                            2
+                        </label>
+
+                        <label>
+                            <input type="radio" name="rating" value="3">
+                            3
+                        </label>
+
+                        <label>
+                            <input type="radio" name="rating" value="4">
+                            4
+                        </label>
+
+                        <label>
+                            <input type="radio" name="rating" value="5">
+                            5
+                        </label>
+
+                    </div>
+
+                    <div class="scale-description">
+                        <span>Огт сэтгэл хангалуун бус</span>
+                        <span>Маш сэтгэл хангалуун</span>
+                    </div>
+
+                </div>
+
+
+                <div class="form-footer">
+
+                    <button
+                        type="button"
+                        class="submit-btn"
+                        onclick="previousSection()">
+
+                        ← Буцах
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="submit-btn"
+                        onclick="nextSection()">
+
+                        Дараагийн хэсэг →
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECTION 3 -->
+
+            <section id="section3" style="display:none;">
+
+                <div class="section-title">
+                    3. Санал хүсэлт
+                </div>
+
+                <div class="section-description">
+                    Таны санал судалгааны дүгнэлт боловсруулахад тусална.
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Цахим үйлчилгээний аль хэсгийг сайжруулах шаардлагатай гэж үзэж байна вэ?
+                    </label>
+
+                    <textarea
+                        id="feedback"
+                        placeholder="Санал, хүсэлтээ энд бичнэ үү...">
+                    </textarea>
+
+                </div>
+
+
+                <div class="question">
+
+                    <label class="question-label">
+                        Та цаашид ийм төрлийн судалгаанд оролцох сонирхолтой юу?
+                    </label>
+
+                    <div class="options">
+
+                        <label class="option">
+                            <input type="radio" name="future">
+                            Тийм
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="future">
+                            Магадгүй
+                        </label>
+
+                        <label class="option">
+                            <input type="radio" name="future">
+                            Үгүй
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-footer">
+
+                    <div class="privacy">
+                        🔒 Таны өгсөн мэдээллийг судалгааны зорилгоор
+                        ашиглана. Нууцлалын нөхцөлийг мөрдөнө.
+                    </div>
+
+                    <button
+                        type="button"
+                        class="submit-btn"
+                        onclick="submitSurvey()">
+
+                        Судалгааг илгээх ✓
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </form>
+
+
+        <!-- SUCCESS -->
+
+        <div class="success" id="success">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Судалгааг амжилттай илгээлээ
+            </h2>
+
+            <p>
+                Таны өгсөн хариултыг хүлээн авлаа.
+                Судалгаанд оролцсон танд баярлалаа.
+            </p>
+
+            <div class="reference">
+
+                Судалгааны дугаар:
+                <strong id="referenceNumber">
+                    SUR-000000
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script>
+
+    let currentSection = 1;
+
+    const section1 = document.getElementById("section1");
+    const section2 = document.getElementById("section2");
+    const section3 = document.getElementById("section3");
+
+    const progressFill =
+        document.getElementById("progressFill");
+
+    const progressText =
+        document.getElementById("progressText");
+
+    const progressPercent =
+        document.getElementById("progressPercent");
+
+    const errorBox =
+        document.getElementById("errorBox");
+
+
+    function updateProgress() {
+
+        const percentage =
+            Math.round((currentSection / 3) * 100);
+
+        progressFill.style.width =
+            percentage + "%";
+
+        progressText.innerText =
+            currentSection + "-р хэсэг / 3";
+
+        progressPercent.innerText =
+            percentage + "%";
+    }
+
+
+    function showSection(number) {
+
+        section1.style.display = "none";
+        section2.style.display = "none";
+        section3.style.display = "none";
+
+        if (number === 1) {
+            section1.style.display = "block";
         }
 
-        function validateForm() {
-            if (!userNameInput.value.trim() || !birthDateInput.value || !genderInput.value || !mbtiInput.value) {
-                formError.style.display = 'block';
-                card.classList.add('shake-card');
-                vibrate(50);
-                setTimeout(() => card.classList.remove('shake-card'), 600);
-                return false;
-            }
-            formError.style.display = 'none';
-            return true;
+        if (number === 2) {
+            section2.style.display = "block";
         }
 
-        function check_sex() {
-            if (genderInput.value === 'male') {
-                prankImage.src = 'images/monkeymidlefinger.png';
-            } else if (genderInput.value === 'female') {
-                prankImage.src = 'images/banshitaitsai.png';
-            }
+        if (number === 3) {
+            section3.style.display = "block";
         }
 
-        async function sleep(ms) {
-            return new Promise(r => setTimeout(r, ms));
-        }
+        currentSection = number;
 
-        async function startCalculations() {
-            if (!validateForm()) return;
+        updateProgress();
 
-            check_sex();
-
-            appState = 'calculating';
-
-            formContainer.style.display = 'none';
-            loaderContainer.style.display = 'flex';
-            disclaimerText.style.opacity = '0';
-            btnWrapper.style.display = 'none';
-
-            let currentP = 0;
-            
-            for (let i = 0; i < stages.length; i++) {
-                const stage = stages[i];
-                statusText.innerText = stage.t;
-                
-                vibrate(30);
-
-                while (currentP < stage.p) {
-                    currentP += Math.random() * 2 + 1;
-                    if(currentP > stage.p) currentP = stage.p;
-                    
-                    progressBar.style.width = currentP + '%';
-                    statusPercent.innerText = Math.floor(currentP) + '%';
-                    await sleep(40 + Math.random() * 50);
-                }
-                
-                if(currentP === 99) {
-                    statusPercent.style.color = '#d9534f';
-                    await sleep(2500); // The 99% pause
-                    statusPercent.style.color = 'var(--accent-color)';
-                } else {
-                    await sleep(500 + Math.random() * 700);
-                }
-            }
-
-            // Finish
-            progressBar.style.width = '100%';
-            statusPercent.innerText = '100%';
-            statusText.innerText = "Тооцоолол амжилттай дууслаа!";
-            
-            vibrate([100, 50, 100]);
-            
-            appState = 'completed';
-            btnWrapper.style.display = 'block';
-            actionBtn.innerText = "Үр дүнг харах 🤍";
-        }
-
-        function revealPrank() {
-            appState = 'revealed';
-            vibrate([200, 100, 300, 100, 400]);
-            
-            card.classList.add('revealed');
-            
-            document.getElementById('cardContent').style.display = 'none';
-            document.getElementById('disclaimerText').style.display = 'none';
-            document.getElementById('btnWrapper').style.display = 'none';
-        }
-
-        actionBtn.addEventListener('click', () => {
-            if (appState === 'welcome') {
-                startCalculations();
-            } else if (appState === 'completed') {
-                revealPrank();
-            }
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
         });
+    }
 
-    </script>
+
+    function validateSection1() {
+
+        const age =
+            document.getElementById("age").value;
+
+        const education =
+            document.getElementById("education").value;
+
+        const gender =
+            document.querySelector(
+                'input[name="gender"]:checked'
+            );
+
+        const employment =
+            document.querySelector(
+                'input[name="employment"]:checked'
+            );
+
+        if (
+            !age ||
+            !education ||
+            !gender ||
+            !employment
+        ) {
+
+            errorBox.style.display = "block";
+
+            return false;
+        }
+
+        errorBox.style.display = "none";
+
+        return true;
+    }
+
+
+    function validateSection2() {
+
+        const internetTime =
+            document.getElementById("internetTime").value;
+
+        const device =
+            document.querySelector(
+                'input[name="device"]:checked'
+            );
+
+        const egov =
+            document.querySelector(
+                'input[name="egov"]:checked'
+            );
+
+        if (
+            !internetTime ||
+            !device ||
+            !egov
+        ) {
+
+            errorBox.style.display = "block";
+
+            return false;
+        }
+
+        errorBox.style.display = "none";
+
+        return true;
+    }
+
+
+    function nextSection() {
+
+        if (currentSection === 1) {
+
+            if (!validateSection1()) {
+                return;
+            }
+
+            showSection(2);
+
+        } else if (currentSection === 2) {
+
+            if (!validateSection2()) {
+                return;
+            }
+
+            showSection(3);
+        }
+    }
+
+
+    function previousSection() {
+
+        if (currentSection > 1) {
+
+            showSection(
+                currentSection - 1
+            );
+
+        }
+    }
+
+
+    function submitSurvey() {
+
+        const button =
+            document.querySelector(
+                '#section3 .submit-btn'
+            );
+
+        button.disabled = true;
+
+        button.innerText =
+            "Илгээж байна...";
+
+        setTimeout(() => {
+
+            document.querySelector(
+                ".form"
+            ).style.display = "none";
+
+            document.querySelector(
+                ".progress-area"
+            ).style.display = "none";
+
+            document.getElementById(
+                "success"
+            ).style.display = "block";
+
+            const randomNumber =
+                Math.floor(
+                    100000 +
+                    Math.random() * 900000
+                );
+
+            document.getElementById(
+                "referenceNumber"
+            ).innerText =
+                "SUR-" + randomNumber;
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }, 1500);
+    }
+
+
+    updateProgress();
+
+</script>
+
 </body>
-
 </html>
